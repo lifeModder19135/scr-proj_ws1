@@ -1,9 +1,9 @@
-# from client import createclient
+from client import createclient
 from PyQt5 import QtCore, QtGui, QtWidgets
 from gui import Ui_MainWindow
 
 # run code from client.py
-# createclient()
+createclient()
 
 # run code from gui.py
 if __name__ == "__main__":
