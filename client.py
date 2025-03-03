@@ -23,31 +23,39 @@ def get_aggs(client):
     )
     return aggs
 
-def sort_aggs(aggs):
+def sort_agg(aggs):
     aggs_srtd = sorted(aggs, key=lambda x: x.high,  reverse=True)
     aggs_bkwd = sorted(aggs, key=lambda x: x.low)
     high_price = aggs_srtd[0].high
     low_price = aggs_bkwd[0].low
+    print(ticker)
     print(high_price)
+    # print('\n')
+    # print(aggs_srtd[0])
+    # print(aggs_srtd[1])
+    # print(aggs_srtd[2])
+    # print(aggs_srtd[3])
+    # print(aggs_srtd[4])
+    # print(aggs_srtd[5])
+    # print('\n')
+    # print(low_price)
     print('\n')
-    print(aggs_srtd[0])
-    print(aggs_srtd[1])
-    print(aggs_srtd[2])
-    print(aggs_srtd[3])
-    print(aggs_srtd[4])
-    print(aggs_srtd[5])
-    print('\n')
-    print(low_price)
-    print('\n')
-    print(aggs_bkwd[0])
-    print(aggs_bkwd[1])
-    print(aggs_bkwd[2])
-    print(aggs_bkwd[3])
-    print(aggs_bkwd[4])
-    print(aggs_bkwd[5])
+    # print(aggs_bkwd[0])
+    # print(aggs_bkwd[1])
+    # print(aggs_bkwd[2])
+    # print(aggs_bkwd[3])
+    # print(aggs_bkwd[4])
+    # print(aggs_bkwd[5])
 
 
 def for_tickers():
     for t in constants.TICKERS:
+
         print(t)
-#        info = client.get_aggs()
+
+def get_highs(client):
+    
+    for t in constants.TICKERS:
+
+        ticker = t
+        client.sort_agg(get_aggs())
