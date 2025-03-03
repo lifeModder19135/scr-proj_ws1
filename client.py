@@ -1,6 +1,5 @@
 from polygon import RESTClient
-import confs
-import json
+import constants
 
 ticker = 'AAPL'
 multiplier = 5
@@ -10,7 +9,7 @@ enddate = '2025-02-14'
 
 def createclient():
 
-    client = RESTClient(confs.API_KEY)
+    client = RESTClient(constants.API_KEY)
     return client
 
 def get_aggs(client):
@@ -22,7 +21,9 @@ def get_aggs(client):
         startdate,
         enddate 
     )
+    return aggs
 
+def sort_aggs(aggs):
     aggs_srtd = sorted(aggs, key=lambda x: x.high,  reverse=True)
     aggs_bkwd = sorted(aggs, key=lambda x: x.low)
     high_price = aggs_srtd[0].high
@@ -46,5 +47,7 @@ def get_aggs(client):
     print(aggs_bkwd[5])
 
 
-def get_tickers(client):
-    pass
+def for_tickers():
+    for t in constants.TICKERS:
+        print(t)
+#        info = client.get_aggs()
