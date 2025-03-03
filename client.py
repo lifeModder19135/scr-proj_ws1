@@ -46,4 +46,5 @@ def get_aggs(client):
     print(aggs_bkwd[5])
 
 
-        
+def get_tickers(client):
+    pass
