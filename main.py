@@ -1,10 +1,10 @@
-from client import createclient
+from client import createclient, get_aggs
 from PyQt5 import QtCore, QtGui, QtWidgets
 from gui import Ui_MainWindow
 import sys
 
 # run code from client.py
-createclient()
+get_aggs(createclient())
 
 # run code from gui.py
 if __name__ == "__main__":
@@ -14,20 +14,3 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-
-
-    #script.py
-
-    print('hello world')
-
-    #tasks.py
-
-    from invoke import task
-
-@task
-def build(c):
-   print('Building!')
-
-@task
-def hello(c):
-   c.run('./script.py')
