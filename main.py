@@ -1,12 +1,13 @@
-from client import createclient, get_aggs, sort_agg, for_tickers, get_highs
+from client import createclient, get_aggs, sort_agg, print_tickers, get_highs, ticker
 from PyQt5 import QtCore, QtGui, QtWidgets
 from gui import Ui_MainWindow
 import sys
 
 # run code from client.py
 # sort_aggs(get_aggs(createclient()))
-# for_tickers()
+# print_tickers()
 get_highs(createclient())
+
 
 # run code from gui.py
 if __name__ == "__main__":

@@ -30,25 +30,10 @@ def sort_agg(aggs):
     low_price = aggs_bkwd[0].low
     print(ticker)
     print(high_price)
-    # print('\n')
-    # print(aggs_srtd[0])
-    # print(aggs_srtd[1])
-    # print(aggs_srtd[2])
-    # print(aggs_srtd[3])
-    # print(aggs_srtd[4])
-    # print(aggs_srtd[5])
-    # print('\n')
-    # print(low_price)
     print('\n')
-    # print(aggs_bkwd[0])
-    # print(aggs_bkwd[1])
-    # print(aggs_bkwd[2])
-    # print(aggs_bkwd[3])
-    # print(aggs_bkwd[4])
-    # print(aggs_bkwd[5])
 
 
-def for_tickers():
+def print_tickers():
     for t in constants.TICKERS:
 
         print(t)
@@ -57,5 +42,7 @@ def get_highs(client):
     
     for t in constants.TICKERS:
 
+        global ticker
         ticker = t
+        # print({ticker})
         sort_agg(get_aggs(client))
