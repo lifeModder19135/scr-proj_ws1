@@ -58,4 +58,4 @@ def get_highs(client):
     for t in constants.TICKERS:
 
         ticker = t
-        client.sort_agg(get_aggs())
+        sort_agg(get_aggs(client))
